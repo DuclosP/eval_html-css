@@ -1,0 +1,25 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    color: $secundary;
+}
+h1{
+    text-transform: uppercase;
+}
+.wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.social {
+    i{
+        color: $white;
+        padding-left: 20px;
+    }
+}
+//règle pour les a
+a{
+    color: inherit;
+    text-decoration: none;
+    &:hover{
+        color: $primary;
+    }
+}

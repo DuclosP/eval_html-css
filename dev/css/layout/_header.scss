@@ -1,0 +1,75 @@
+.header{
+    color: $white;
+    height: 35vh;
+    .pre-nav, .main-nav{
+        @include flex ($justify:space-between);
+        padding: 20px;
+    }
+    .main-nav{
+        background-color: rgba(255, 255, 255, 0.24);
+        div{
+            @include flex($justify:center, $align:center);
+            a{
+                padding-left: 20px;
+                text-transform: uppercase;
+                line-height: 0;
+            }
+        }
+    }
+    .promo {
+        a{
+            margin-right: 20px;
+            text-transform: capitalize;
+        }
+    }
+    .social {
+        i{
+            padding-left: 20px;
+        }
+    }
+    .hero{
+        @include flex($direction:column, $align:center);
+        .bread-crump{
+            a{
+                
+                &:last-child{
+                    pointer-events:none
+                }
+            }
+        }
+    }
+}
+//spécifique a la page home
+.home .header {
+    height: 100vh;
+    background: url(../img/hero-bg.jpg) no-repeat center/cover;
+    .hero{
+        @include flex($direction:column, $align:flex-start);
+        transform: translateY(25vh);
+        h1{
+            font-size: 4em;
+        }
+        p{
+            &:nth-of-type(1){
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+            }
+            &:nth-of-type(2){
+                width: 50%;
+                word-spacing: 0.2em;
+            }
+        }
+    }
+}
+//spécifique a la page blog
+.blog .header {
+    background: url(../img/hero-blog.jpg) center/cover;
+}
+//spécifique pour contact
+.hotels .header {
+    background: url(../img/hero-hotels.jpg) center/cover;
+}
+//spécifique pour hotels
+.contact .header {
+    background: url(../img/hero-contact.jpg) center/cover;
+}
