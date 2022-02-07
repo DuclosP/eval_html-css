@@ -1,0 +1,190 @@
+.popular{
+    article{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2em;
+        justify-content: center;
+    }
+    .box{
+        height: 150px;
+        text-transform: capitalize;
+        color: $white;
+        position: relative;
+        @include flex ($direction:column,$justify:center, $align:center);
+        span{
+            display: block;
+            text-align: center;
+            font-size: 0.8em;
+            font-weight: 400;
+        }
+        a{
+            opacity: 0;
+            &:hover{
+                background-color: $primary
+            }
+        }
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.226);
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        &:hover{
+            a{
+                opacity: 1;
+                z-index: 1;
+            }
+            &:before{
+                opacity: 1;
+                transition: all 0.4s ease-in-out;
+            }
+        }
+        &:nth-of-type(1){
+            background: url(../img/d1.jpg) center/cover;
+        }
+        &:nth-of-type(2){
+            background: url(../img/d2.jpg) center/cover;
+        }
+        &:nth-of-type(3){
+            background: url(../img/d3.jpg) center/cover;
+        }
+    }
+}
+.affordable {
+    padding-bottom: 80px;
+    background: url(../img/price-bg.png);
+    article{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2em;
+        background-color: $white;
+        h3{
+            text-transform: capitalize;
+            text-align: center;
+            border-bottom: 2px $primary solid;
+            padding-bottom: 20px;
+        }
+        >div{
+            padding: 30px;
+        }
+    }
+    .liste {
+        @include flex ($justify:space-between);
+        ul{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            li{
+                @include flex ($justify:space-between, $align:center);
+                padding: 10px 0;
+            }
+        }
+        
+    }
+}
+.issues{
+    padding-bottom: 40px;
+    article{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2em;
+        div{
+            &:hover{
+                img{
+                    transform: rotate(-4deg) scale(110%);
+                    transition: 0.4s all ease-in-out;
+                }
+            }
+        }
+    }
+    .img {
+        height: 150px;
+        overflow: hidden;
+    }
+    
+    a{
+        text-transform: capitalize;
+    }
+    p{
+        color: #aeaeae;
+    }
+}
+.testimonial{
+    padding-top: 20px;
+    padding-bottom: 100px;
+    background-color: $grey;
+    article{
+        @include flex($justify:space-between);
+        a{
+            width: 49%;
+            background-color: $white;
+            &:nth-of-type(1){
+                .testi-logo{
+                    background: url(../img/blog/c1.jpg) center/cover;
+                }
+            }
+            &:nth-of-type(2){
+                .testi-logo{
+                    background: url(../img/blog/c3.jpg) center/cover;
+                }
+            }
+            &:hover{
+               .testi{
+                   color: $secundary;
+               }
+                blockquote{
+                    color: $primary;
+                }
+            }
+        }
+        .testi{
+            padding-left: 100px;
+            padding-right: 50px;
+            position: relative;
+        }
+        blockquote{
+            padding: 0;
+            margin: 0;
+        }
+        .testi-logo{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    }
+}
+.ask {
+    article {
+        height: 400px;
+        @include flex;
+        div{
+            width: 50%;
+        }
+        .ask-content{
+            @include flex($direction:column, $justify:center);
+            padding:80px;
+            p{
+                &:nth-of-type(1){
+                    font-size: 1.5em;
+                    font-weight: 700;
+                }
+                &:nth-of-type(2){
+                    font-size: 0.9em;
+                    line-height: 1.5em;
+                    color: $secundary;
+                }
+            }
+        }
+        .ask-img{
+            background: url(../img/about-img.jpg) center/cover;
+        }
+    }
+}
