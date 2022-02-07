@@ -1,0 +1,64 @@
+//-----------------------------------------------//
+// mixin flex
+@mixin flex ($direction:row, $justify:flex-start, $align:stretch ) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+//-----------------------------------------------//
+// mixin pour media-querry
+
+$mobile:764px;
+$tablet: 990px;
+
+@mixin mobile {
+    @media screen and (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+//-----------------------------------------------//
+
+//-----------------------------------------------//
+// un mixin pour les animations, merci Emile
+@mixin animation($nom, $duree: .3s, $delai: 0s) {
+    animation: $nom $duree ease-in-out $delai backwards;
+} 
+
+@keyframes up {
+    from {
+        transform: translateY(10vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes down {
+    from {
+        transform: translateY(-2vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes zoom {
+    from {
+        transform: scale(0%);
+        opacity: 0;
+    }
+    to {
+        transform: scale(100%);
+        opacity: 1;
+    }
+}
+//-----------------------------------------------//
