@@ -1,0 +1,78 @@
+.hotels-destination{
+    background-color: $grey;
+    padding-bottom: 100px;
+    article{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2em;
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+    h3{
+        text-transform: capitalize;
+    }
+}
+.card{
+    background-color: $white;
+    transition: all 0.4s ease-in-out;
+    .img{
+        width: 100%;
+        height: 250px;
+    }
+    &:nth-of-type(1){
+        .img{
+            background: url(../img/hotels/d1.jpg) center/cover;
+        }
+    }
+    &:nth-of-type(2){
+        .img{
+            background: url(../img/hotels/d2.jpg) center/cover;
+        }
+    }
+    &:nth-of-type(3){
+        .img{
+            background: url(../img/hotels/d3.jpg) center/cover;
+        }
+    }
+    &:nth-of-type(4){
+        .img{
+            background: url(../img/hotels/d4.jpg) center/cover;
+        }
+    }
+    &:nth-of-type(5){
+        .img{
+            background: url(../img/hotels/d5.jpg) center/cover;
+        }
+    }
+    &:nth-of-type(6){
+        .img{
+            background: url(../img/hotels/d6.jpg) center/cover;
+        }
+    }
+    &:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.4s ease-in-out;
+    }
+}
+.cardo-description{
+    padding: 20px;
+    .card-name, .desc-content{
+        @include flex ($justify:space-between, $align:center);
+        p{
+            color: #aeaeae;
+        }
+    }
+    .desc-content{
+        &:not(:last-child){
+            border-bottom: 1px solid #dedede;
+        }
+    }
+    .yellow{
+        color: $black;
+        &:hover{
+            color: $white;
+        }
+    }
+}
+

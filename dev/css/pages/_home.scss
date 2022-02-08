@@ -2,11 +2,11 @@
     article{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 300px;
         gap: 2em;
         justify-content: center;
     }
     .box{
-        height: 150px;
         text-transform: capitalize;
         color: $white;
         position: relative;
@@ -105,6 +105,10 @@
     .img {
         height: 150px;
         overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     
     a{
@@ -134,9 +138,9 @@
                 }
             }
             &:hover{
-               .testi{
-                   color: $secundary;
-               }
+                .testi{
+                    color: $secundary;
+                }
                 blockquote{
                     color: $primary;
                 }
@@ -146,10 +150,6 @@
             padding-left: 100px;
             padding-right: 50px;
             position: relative;
-        }
-        blockquote{
-            padding: 0;
-            margin: 0;
         }
         .testi-logo{
             height: 50px;
@@ -163,14 +163,14 @@
 }
 .ask {
     article {
-        height: 400px;
+        height: 100vh;
         @include flex;
         div{
             width: 50%;
         }
         .ask-content{
             @include flex($direction:column, $justify:center);
-            padding:80px;
+            padding:200px;
             p{
                 &:nth-of-type(1){
                     font-size: 1.5em;
@@ -184,7 +184,84 @@
             }
         }
         .ask-img{
+            height: 100%;
             background: url(../img/about-img.jpg) center/cover;
         }
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+            .ask-content{
+                padding: 20px;
+                order: 1;
+            }
+            .ask-img{
+                width: 100%;
+            }
+        }
+        @include mobile {
+            .ask-content{
+                padding: 10px;
+                order: 0;
+            }
+        }
     }
+}
+.latest-blog {
+    article{
+        padding-bottom: 80px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:2em;
+    }
+    .latest-content {
+        .img{
+            overflow: hidden;
+            height: 350px;
+            div{
+                width: 100%;
+                height: 100%;
+                transition: all 0.4s ease-in-out;
+            }
+        }
+        &:nth-of-type(1){
+            .img{
+                div{
+                    background:url(../img/b1.jpg) center/cover;
+                }
+            }
+        }
+        &:nth-of-type(2){
+            .img{
+                div{
+                    background:url(../img/b2.jpg) center/cover;
+                }
+            }
+        }
+        &:nth-of-type(3){
+            .img{
+                div{
+                    background:url(../img/b3.jpg) center/cover;
+                }
+            }
+        }
+        &:hover {
+            .img{
+                div{
+                    transform: scale(105%);
+                    transition: all 0.4s ease-in-out;
+                }
+            }
+        }
+    }
+
+    .keyword{
+        @include flex;
+        gap: 4px;
+        margin: 5px 0;
+        a{
+            text-transform: capitalize;
+            font-size: 0.7em;
+        }
+    }
+    
 }

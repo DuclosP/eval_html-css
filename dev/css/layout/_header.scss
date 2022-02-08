@@ -31,9 +31,13 @@
         @include flex($direction:column, $align:center);
         .bread-crump{
             a{
-                
+                text-transform: capitalize;
                 &:last-child{
                     pointer-events:none
+                }
+                &:not(a:nth-of-type(1))::before{
+                    content:"→";
+                    padding: 0 20px;
                 }
             }
         }
@@ -57,6 +61,21 @@
             &:nth-of-type(2){
                 width: 50%;
                 word-spacing: 0.2em;
+            }
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    }
+    @include mobile {
+        height: 50vh;
+        .hero{
+            transform: translate(0);
+            &>*{
+                margin: 0;
+            }
+            p:nth-of-type(2){
+                width: 80%;
             }
         }
     }

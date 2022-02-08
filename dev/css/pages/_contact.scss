@@ -1,0 +1,62 @@
+.formu{
+    background-color: $grey;
+    padding: 120px 0;
+    article {
+        display: grid;
+        grid-template-columns: 30% 1fr;
+        gap: 80px;
+        iframe{
+            grid-column: span 2;
+            width: 100%;
+        }
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+.contact-content{
+   @include flex($align:center);
+   i{margin-right: 40px;
+       font-size: 3em;
+       color: $primary;
+   }
+   span{
+       display: block;
+       color: #aeaeae;
+   }
+}
+.el-formulaire{
+    display: grid;
+    grid-template-areas: 
+    ". a"
+    ". a"
+    ". a"
+    ;
+    gap: 2em;
+    textarea{
+        grid-area: a;
+        resize: none;
+    }
+    .btn{
+        grid-column: 2;
+        width: 50%;
+        justify-self: flex-end;
+        &:hover{
+            color: $primary;
+            background-color: $white;
+            border: 1px solid $primary;
+        }
+    }
+    input, textarea {
+        border: 1px solid #dedede;
+        padding: 20px;
+        &:focus {
+            outline: none !important;
+            border:2px solid $primary;
+        }
+    }
+    @include tablet {
+        @include flex($direction:column)
+    }
+}

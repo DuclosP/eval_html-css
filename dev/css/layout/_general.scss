@@ -8,6 +8,12 @@ h1{
 .wrapper {
     max-width: 1140px;
     margin: 0 auto;
+    @include tablet{
+        margin: 0 40px;
+    }
+    @include mobile {
+        margin: 0 10px;
+    }
 }
 .social {
     i{
@@ -15,8 +21,12 @@ h1{
         padding-left: 20px;
     }
 }
+blockquote{
+    padding: 0;
+    margin: 0;
+}
 //règle pour les a
-a{
+a, i{
     color: inherit;
     text-decoration: none;
     &:hover{

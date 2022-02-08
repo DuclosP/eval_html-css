@@ -13,6 +13,9 @@
         }
         &>*{
             width: 25%;
+            @include tablet{
+                width: 100%;
+            }
         }
         p{
             line-height:1.4em;
@@ -24,7 +27,11 @@
                 @include flex($direction:column);
                 a{
                     margin-bottom: 20px;
+ 
                 }
+            }
+            @include mobile {
+                justify-content: space-between;
             }
         } 
         .footer-gal{
@@ -58,6 +65,19 @@
                     background:url(../img/i8.jpg) center/cover;
                 }
             }
+            @include mobile {
+                gap: 10px;
+                a{
+                    width: 50px;
+                }
+            }
+        }
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        @include mobile {
+            @include flex ($direction:column);
         }
     }
     .footer-nav{
