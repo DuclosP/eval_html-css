@@ -80,14 +80,5 @@
             @include flex ($direction:column);
         }
     }
-    .footer-nav{
-        .wrapper{
-            border-top: 1px solid #aeaeae;
-            padding-top: 20px;
-            @include flex ($justify:space-between, $align:center);
-        }
-            span{
-                color: $primary;
-            }
-    }
+
 }

@@ -5,6 +5,12 @@
         grid-auto-rows: 300px;
         gap: 2em;
         justify-content: center;
+        @include mobile {
+            @include flex($direction:column);
+            .box{
+                height: 300px;
+            }
+        }
     }
     .box{
         text-transform: capitalize;
@@ -71,6 +77,9 @@
         >div{
             padding: 30px;
         }
+        @include mobile {
+            @include flex($direction:column)
+        }
     }
     .liste {
         @include flex ($justify:space-between);
@@ -94,23 +103,60 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 2em;
         div{
+            transition: 0.4s all ease-in-out;
             &:hover{
-                img{
-                    transform: rotate(-4deg) scale(110%);
-                    transition: 0.4s all ease-in-out;
+                .img{
+                    div{
+                        transform: rotate(-4deg) scale(110%);
+                        transition: 0.4s all ease-in-out;
+                    }
+                }
+            }
+            &:nth-of-type(1){
+                .img{
+                    div{
+                        background: url(../img/o1.jpg) center/cover;
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                .img{
+                    div{
+                        background: url(../img/o2.jpg) center/cover;
+                    }
+                }
+            }
+            &:nth-of-type(3){
+                .img{
+                    div{
+                        background: url(../img/o3.jpg) center/cover;
+                    }
+                }
+            }
+            &:nth-of-type(4){
+                .img{
+                    div{
+                        background: url(../img/o4.jpg) center/cover;
+                    }
+                }
+            }
+        }
+        @include mobile {
+            @include flex($direction:column);
+            div{
+                .img{
+                    height: 300px
                 }
             }
         }
     }
-    .img {
-        height: 150px;
+    .img{
+        height: 200px;
         overflow: hidden;
-        img{
-            width: 100%;
+        div{
             height: 100%;
         }
     }
-    
     a{
         text-transform: capitalize;
     }
@@ -131,10 +177,16 @@
                 .testi-logo{
                     background: url(../img/blog/c1.jpg) center/cover;
                 }
+                @include mobile {
+                    width: 100%;
+                }
             }
             &:nth-of-type(2){
                 .testi-logo{
                     background: url(../img/blog/c3.jpg) center/cover;
+                }
+                @include mobile {
+                    display: none;
                 }
             }
             &:hover{
@@ -212,6 +264,9 @@
         display: grid;
         grid-template-columns: repeat(3,1fr);
         gap:2em;
+        @include mobile {
+            @include flex($direction:column)
+        }
     }
     .latest-content {
         .img{

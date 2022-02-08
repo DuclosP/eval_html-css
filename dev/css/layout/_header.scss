@@ -1,21 +1,7 @@
 .header{
     color: $white;
     height: 35vh;
-    .pre-nav, .main-nav{
-        @include flex ($justify:space-between);
-        padding: 20px;
-    }
-    .main-nav{
-        background-color: rgba(255, 255, 255, 0.24);
-        div{
-            @include flex($justify:center, $align:center);
-            a{
-                padding-left: 20px;
-                text-transform: uppercase;
-                line-height: 0;
-            }
-        }
-    }
+
     .promo {
         a{
             margin-right: 20px;
