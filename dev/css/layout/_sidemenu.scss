@@ -15,7 +15,18 @@
         padding: 40px;
         a{
             text-transform: uppercase;
-            font-size: 1.4em;
+            font-size: 1.1em;
         }
+        transform: translateX(-100%);
+        transition: 0.4s all ease-in-out;
+    }
+}
+//pour l'apparition du menu avec le js
+.open {
+    opacity: 1;
+    z-index: 2;
+    .menu{
+        transform: translateX(0);
+        transition: 0.4s all ease-in-out;
     }
 }

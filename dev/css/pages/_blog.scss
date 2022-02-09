@@ -3,11 +3,20 @@
     p{
         color: #aeaeae;
     }
+    .social {
+        display: flex;
+        i{
+            color: $black;
+            &:hover{
+                color: $primary;
+            }
+        } 
+    }
 }
 //pour mettre en place les 2 partie des la page
 .blog-content{
     display: grid;
-    grid-template-columns: 70% 1fr;
+    grid-template-columns: 60% 1fr;
     gap: 2em;
     @include tablet {
         @include flex ($direction:column);
@@ -22,7 +31,10 @@
 //partie blog
 .principale{
     padding-top: 80px;
-    @include flex($direction:column)
+    @include flex($direction:column);
+    img{
+        width:100%
+    }
 }
 .blog-txt{
     margin-top: 40px;
@@ -61,15 +73,9 @@
         column-gap: 10em;
         text-align: left;
     }
+    
 }
-.social {
-    i{
-        color: $black;
-        &:hover{
-            color: $primary;
-        }
-    } 
-}
+
 .txt-blanc{
     background-color: $white;
     padding: 20px;
@@ -78,17 +84,13 @@
 .double-img{
     @include flex($justify:space-around);
     margin: 20px 0;
+    padding: 40px;
     gap: 20px;
     img{
         display: block;
-        width: 100%;
-        height: 100%;
-        @include tablet {
-            width: 50%;
-            height: 50%;
-        }
+        width: 50%;
     }
-    }
+}
 
 //la partie avec les coms
 .navigation{
@@ -162,7 +164,7 @@
 .comment{
     @include flex($justify:space-between, $align:center);
     .com-content {
-        margin-left: -200px ;
+        margin-left: -150px ;
         span{
             font-size: 1.4em;
             font-weight: 700;
@@ -170,6 +172,8 @@
         }
         @include tablet {
             margin-left:0;
+            font-size: 0.8em;
+            font-weight: 700;
         }
     }
 }
@@ -285,6 +289,10 @@
     border-bottom: 1px solid #dedede;
     padding-bottom: 40px;
     margin: 40px 0;
+    img{
+        display: block;
+        width: 100%;
+    }
 }
 //categorie
 .post-cat {

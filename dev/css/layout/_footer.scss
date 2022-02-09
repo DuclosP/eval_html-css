@@ -20,6 +20,7 @@
         p{
             line-height:1.4em;
         }
+        //les liens du site
         .footer-link{
             @include flex;
             gap: 40px;
@@ -27,13 +28,10 @@
                 @include flex($direction:column);
                 a{
                     margin-bottom: 20px;
- 
                 }
             }
-            @include mobile {
-                justify-content: space-between;
-            }
         } 
+        //la gallerie
         .footer-gal{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -66,7 +64,9 @@
                 }
             }
             @include mobile {
+                padding: 0 100px;
                 gap: 10px;
+                justify-items: center;
                 a{
                     width: 50px;
                 }
@@ -80,8 +80,12 @@
             @include flex ($direction:column);
         }
     }
+    //l'input pour l'envoie de mail
     .mail-form{
+        display: flex;
+        gap: 0;
         input {
+            width: 100%;
             background-color: transparent;
             border: 1px solid #dedede;
             color: $white;
@@ -101,12 +105,19 @@
                 color: $white;
             }
         }
-        i {
+        button {
+            order: 1;
             background-color: $primary;
+            border: none;
+            cursor: pointer;
+        }
+        i {
+            align-self: center;
+            position: relative;
             color: white;
-            padding: 15px;
             top: 0;
             right: 0;
+            
         }
     }
 }
