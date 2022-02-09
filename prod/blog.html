@@ -8,6 +8,15 @@
   <title>Le titre de la page</title>
 </head>
 <body class="blog">
+  <!-- le side menu  -->
+  <aside class="side-menu">
+    <div class="menu">
+      <a href="index.html">home</a>
+      <a href="hotels.html">hotels</a>
+      <a href="contact.html">contact</a>
+    </div>
+  </aside>
+  
   <!-- le header  -->
   <header class="header">
     <nav class="wrapper">
@@ -24,8 +33,14 @@
         </div>
       </div>
       <div class="main-nav"> 
+        <!-- le burger menu  -->
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <a href="#"><img src="../img/logo.png" alt="Le logo Travelista"></a>
-        <div>
+        <div class="navig">
           <a href="index.html">home</a>
           <a href="hotels.html">hotels</a>
           <a href="contact.html">contact</a>
@@ -100,7 +115,7 @@
               </div>
             </div>
             <div class="next">
-              <a href="" class="avatar">
+              <a href="#" class="avatar">
                 <img src="img/blog/c4.jpg" alt="la tête d'emilie">
               </a>
               <div>    
@@ -178,7 +193,7 @@
           </div>
         </div>
         <!-- un petit formulaire évidement -->
-        <form method="get" action="">
+        <form method="get" action="" class="le-form">
           <input type="name" id="name" required placeholder="Enter your name">
           <input type="mail" id="email" required placeholder="Enter email address">
           <input type="text" id="subject" required placeholder="Enter subject">
@@ -187,8 +202,130 @@
         </form>
       </section>
       <!-- la partie de droite -->
-      <section class="side">
-        coté
+      <section>
+        <aside class="aside">
+          <div class="search-post">
+            <input type="search" placeholder="Search Post">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+          <div class="post">
+            <div class="img"></div>
+            <a href="#"><span>Charlier Barber</span><br> Senior blog writer</a>
+            <div class="social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-globe"></i></a>
+              <a href="#"><i class="fab fa-behance"></i></a>
+            </div>
+            <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+          </div>
+          <div class="popular-post">
+            <h2>popular post</h2>
+            <div class="poster">
+              <div class="postit">
+                <img src="img/blog/pp1.jpg" alt="un vieux walkman">
+                <div>
+                  <h3><a href="#">space the final frontier</a></h3>
+                  <p>02 hours ago</p>
+                </div>
+              </div>
+              <div class="postit">
+                <img src="img/blog/pp2.jpg" alt="un appareil photo">
+                <div>
+                  <h3><a href="#">the amazing hubble</a></h3>
+                  <p>02 hours ago</p>
+                </div>
+              </div>
+              <div class="postit">
+                <img src="img/blog/pp3.jpg" alt="des sucettes">
+                <div>
+                  <h3><a href="#">astronomy of astrology</a></h3>
+                  <p>02 hours ago</p>
+                </div>
+              </div>
+              <div class="postit">
+                <img src="img/blog/pp4.jpg" alt="pas un telescope c'est certain">
+                <div>
+                  <h3><a href="#">asteroids telescope</a></h3>
+                  <p>02 hours ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="add">
+            <img src="img/blog/ads-banner.jpg" alt="la pub quoi">
+          </div>
+          <div class="post-cat">
+            <h2>post categories</h2>
+            <a href="#">
+              <div class="cat">
+                <p>technology</p>
+                <p>37</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="cat">
+                <p>Lifestyle</p>
+                <p>69</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="cat">
+                <p>Fashion</p>
+                <p>01</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="cat">
+                <p>Art</p>
+                <p>15</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="cat">
+                <p>Food</p>
+                <p>200</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="cat">
+                <p>Architecture</p>
+                <p>20</p>
+              </div>
+            </a>
+            <a href="#">
+              <div class="cat">
+                <p>le sens de la vie</p>
+                <p>42</p>
+              </div>
+            </a>
+          </div>
+          <div class="post-news">
+            <h2>newsletter</h2>
+            <p>Here, I focus on a range of items and features that we use in life without giving them a second thought.</p>
+            <div class="mail-form">
+              <i class="fas fa-globe"></i>
+              <input type="mail" placeholder="enter email">
+              <input type="submit" value="Subscribe" id="submit">
+            </div>
+            <p>You can unsubscribe at any time</p>
+          </div>
+          <div class="post-tags">
+            <h2>tag clouds</h2>
+            <div class="tags">
+              <a href="#">Overwatch</a>
+              <a href="#">League of legends</a>
+              <a href="#">The witcher 3</a>
+              <a href="#">World of warcraft</a>
+              <a href="#">risk of rain</a>
+              <a href="#">new world</a>
+              <a href="#">The binding of isaac</a>
+              <a href="#">couter strike 1.6</a>
+              <a href="#">Battlefield 2</a>
+              <a href="#">Battlefield 3</a>
+            </div>
+          </div>
+        </aside>
       </section>
     </div>
   </main>
@@ -219,7 +356,10 @@
       <div>
         <h2>NEWSLETTER</h2>
         <p>For business professionals caught between high OEM price and mediocre print and graphic output.</p>
-        <input type="mail">
+        <div class="mail-form">
+          <i class="fas fa-globe"></i>
+          <input type="mail" placeholder="enter email">
+        </div>
       </div>
       <div >
         <h2>instafeed</h2>

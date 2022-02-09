@@ -27,36 +27,20 @@
    }
 }
 .el-formulaire{
-    display: grid;
+
     grid-template-areas: 
     ". a"
     ". a"
     ". a"
     ;
-    gap: 2em;
+
     textarea{
         grid-area: a;
-        resize: none;
     }
     .btn{
         grid-column: 2;
         width: 50%;
         justify-self: flex-end;
-        &:hover{
-            color: $primary;
-            background-color: $white;
-            border: 1px solid $primary;
-        }
     }
-    input, textarea {
-        border: 1px solid #dedede;
-        padding: 20px;
-        &:focus {
-            outline: none !important;
-            border:2px solid $primary;
-        }
-    }
-    @include tablet {
-        @include flex($direction:column)
-    }
+
 }

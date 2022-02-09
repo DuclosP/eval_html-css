@@ -80,5 +80,33 @@
             @include flex ($direction:column);
         }
     }
-
+    .mail-form{
+        input {
+            background-color: transparent;
+            border: 1px solid #dedede;
+            color: $white;
+            &:focus {
+                outline: none !important;
+            }
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: $white;
+                opacity: 1; /* Firefox */
+            }
+            
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: $white;
+            }
+            
+            ::-ms-input-placeholder { /* Microsoft Edge */
+                color: $white;
+            }
+        }
+        i {
+            background-color: $primary;
+            color: white;
+            padding: 15px;
+            top: 0;
+            right: 0;
+        }
+    }
 }

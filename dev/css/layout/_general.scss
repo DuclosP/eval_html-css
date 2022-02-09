@@ -46,3 +46,69 @@ a, i{
         color: #aeaeae;
     }
 }
+
+//règle pour les formulaires
+form, .mail-form{
+    display: grid;
+    gap: 2em;
+    textarea{
+        resize: none;
+    }
+    .btn{
+        &:hover{
+            color: $primary;
+            background-color: $white;
+            border: 1px solid $primary;
+        }
+    }
+
+    @include tablet {
+        @include flex($direction:column)
+    }
+}
+.mail-form{
+    @include flex ($justify:center);
+    position:relative;
+    i{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 2em;
+    }
+    @include tablet {
+        input{
+            width: 80%;
+        }
+        i{
+            right: 30%;
+        }
+    }
+}
+input, textarea {
+    border: 1px solid #dedede;
+    padding: 20px;
+    &:focus {
+        outline: none !important;
+        border:2px solid $primary;
+    }
+}
+
+//burger menu
+.burger {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    span{
+        display: block;
+        height: 4px;
+        margin: 5px;
+        width: 30px;
+        background-color: #fff;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

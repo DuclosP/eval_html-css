@@ -8,6 +8,15 @@
   <title>Le titre de la page</title>
 </head>
 <body class="hotels">
+  <!-- le side menu  -->
+  <aside class="side-menu">
+    <div class="menu">
+      <a href="index.html">home</a>
+      <a href="hotels.html">hotels</a>
+      <a href="contact.html">contact</a>
+    </div>
+  </aside>
+  
   <!-- le header  -->
   <header class="header">
     <nav class="wrapper">
@@ -24,8 +33,14 @@
         </div>
       </div>
       <div class="main-nav"> 
+        <!-- le burger menu  -->
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <a href="#"><img src="../img/logo.png" alt="Le logo Travelista"></a>
-        <div>
+        <div class="navig">
           <a href="index.html">home</a>
           <a href="hotels.html">hotels</a>
           <a href="contact.html">contact</a>
@@ -33,10 +48,11 @@
       </div>
     </nav>
     <div class="hero wrapper">
-      <h1>hotels</h1>
+      <h1>Blog Details Page</h1>
       <div class="bread-crump">
         <a href="index.html">home</a>
-        <a href="blog.html">hotels</a>
+        <a href="blog.html">blog</a>
+        <a href="#">blog details page</a>
       </div>
     </div>
   </header>
@@ -321,7 +337,10 @@
       <div>
         <h2>NEWSLETTER</h2>
         <p>For business professionals caught between high OEM price and mediocre print and graphic output.</p>
-        <input type="mail">
+        <div class="mail-form">
+          <i class="fas fa-globe"></i>
+          <input type="mail" placeholder="enter email">
+        </div>
       </div>
       <div >
         <h2>instafeed</h2>

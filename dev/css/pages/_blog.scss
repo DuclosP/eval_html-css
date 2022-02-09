@@ -1,11 +1,21 @@
 .blog main{
     background-color: $grey;
+    p{
+        color: #aeaeae;
+    }
 }
 //pour mettre en place les 2 partie des la page
 .blog-content{
     display: grid;
     grid-template-columns: 70% 1fr;
     gap: 2em;
+    @include tablet {
+        @include flex ($direction:column);
+        margin: 0 80px
+    }
+    @include mobile {
+        margin: 0 10px
+    }
 }
 
 //la partie gauche
@@ -26,9 +36,15 @@
     .blog-info{
         @include flex($direction:column);
         text-align: end;
+        @include mobile {
+            @include flex ($direction:column, $justify:flex-start, $align:flex-start)
+        }
     }
     h2{
         margin-top: 0;
+    }
+    @include mobile {
+        grid-template-columns: 1fr;
     }
 }
 .info{
@@ -38,6 +54,12 @@
     }
     i{
         padding-left: 10px;
+    }
+    @include mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10em;
+        text-align: left;
     }
 }
 .social {
@@ -56,7 +78,18 @@
 .double-img{
     @include flex($justify:space-around);
     margin: 20px 0;
-}
+    gap: 20px;
+    img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        @include tablet {
+            width: 50%;
+            height: 50%;
+        }
+    }
+    }
+
 //la partie avec les coms
 .navigation{
     margin-top: 80px;
@@ -133,11 +166,189 @@
         span{
             font-size: 1.4em;
             font-weight: 700;
+            color: #000;
+        }
+        @include tablet {
+            margin-left:0;
         }
     }
 }
-
+//le formulaire
+.le-form{
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 80px;
+    #subject{
+        grid-column: span 2;
+    }
+    #textarea{
+        grid-column: span 2;
+    }
+    .btn{
+        width: 30%;
+        grid-column: span 2;
+        justify-self: center;
+    }
+}
 //la partie droite
-.side{
-    border: 1px black solid;
+.aside{
+    margin-top: 80px;
+    padding: 20px;
+    border: 1px solid #dedede;
+    //tout les h2 du aside
+    h2{
+        text-transform: capitalize;
+        background-color: $primary;
+        padding: 10px ;
+        color: $white;
+        text-align: center;
+        font-size: 1.5em;
+    }
+}
+//la barre de recherche
+.search-post{
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-bottom: 40px;
+    input{
+        width: 100%;
+        background-color: $primary;
+        border: 1px solid $primary;
+        border-radius: 20px;
+        padding: 10px;
+        &:focus {
+            outline: none !important;
+        }
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $white;
+            opacity: 1; /* Firefox */
+        }
+        
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $white;
+        }
+        
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: $white;
+        }
+    }
+    a{
+        position: absolute;
+        right: 10px;
+        font-size: 1.4em;
+        i{
+            color: $white;
+        }
+    }
+}
+//la partie post
+.post{
+    padding: 40px 0;
+    border-top: 1px solid #dedede;
+    @include flex($direction:column, $justify:center, $align:center);
+    text-align: center;
+    .img{
+        width: 150px;
+        height: 150px;
+        background: url(../img/blog/user-info.png) center/cover;
+    }
+    a{
+        color: #000;
+        span{
+            font-weight: 700;
+        }
+        margin: 20px 0;
+    }
+}
+//les posts populaire
+.poster {
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 40px;
+}
+.postit{
+    @include flex($justify:space-between, $align:flex-start);
+    div{
+        width: 60%;
+        h3{
+            padding:0;
+            margin: 0;
+            font-size: 0.9em;
+            text-transform: capitalize;
+        }
+        @include tablet {
+            width: 80%;
+        }
+    }
+}
+//la pub
+.add{
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 40px;
+    margin: 40px 0;
+}
+//categorie
+.post-cat {
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 40px;
+    margin:40px 0;
+    .cat {
+        @include flex($justify:space-between);
+        border-bottom: 2px dotted #dedede;
+        text-transform: capitalize;
+    }
+    a:hover{
+        div{
+            border-color: $primary;
+            p{
+                color: $primary;
+            }
+        }
+    }
+}
+//newsletter
+.post-news{
+    margin: 40px 0;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 40px;
+    .mail-form{
+        i{
+            right: 45%;
+        }
+        #submit{
+            background-color: $primary;
+            color: $white;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        @include tablet {
+            #submit {
+                width: 20%
+            }
+            input{
+                width: 80%;
+            }
+            i{
+                right: 30%;
+            }
+        }
+    }
+}
+//les tags    
+.tags{
+    @include flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    a{
+        text-transform: capitalize;
+        font-size: 0.9em;
+        border: 1px solid #dedede;
+        padding: 10px;
+        background-color: $white;
+        &:hover{
+            background-color: $primary;
+            color: $white;
+        }
+    }
 }
